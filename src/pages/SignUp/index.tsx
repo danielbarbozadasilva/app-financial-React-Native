@@ -10,14 +10,12 @@ const SignUp: React.FC = () => {
   const navigation = useNavigation()
 
   const submitForm = async (form: object) => {
-    console.log(form)
-
-    // dispatch(signUpAction(form)).then(result => {
-    //   if (result?.data?.token) {
-    //     navigation.navigate('MainTab');
-    //     Alert.alert('Sucesso', 'Cadastro realizado com sucesso!');
-    //   }
-    // });
+    dispatch(signUpAction(form)).then(result => {
+      if (result?.data?.token) {
+        navigation.navigate('MainTab');
+        Alert.alert('Sucesso', 'Cadastro realizado com sucesso!');
+      }
+    });
   }
 
   return (

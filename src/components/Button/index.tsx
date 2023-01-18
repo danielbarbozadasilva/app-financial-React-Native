@@ -3,7 +3,7 @@ import { CustomButton, CustomButtonText } from './styled'
 
 type ButtonProps = {
   text: string
-  onPress: boolean
+  onPress: any
 }
 
 const CustomButtonComponent = ({ text, onPress }: ButtonProps) => {

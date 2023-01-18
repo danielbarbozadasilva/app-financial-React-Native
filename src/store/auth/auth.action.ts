@@ -14,7 +14,7 @@ import http from '../../config/http';
 export const signInAction = (data:object) => {
   return async (dispatch:any) => {
     dispatch({type: TYPES.AUTH_LOADING, status: true});
-    try {
+    try {      
       const result = await authService(data);
       const credentials = result.data?.data;
       if (credentials.token) {
@@ -23,10 +23,7 @@ export const signInAction = (data:object) => {
         dispatch({type: TYPES.SIGN_IN, data: credentials.token});
         return true;
       }
-    } catch (error:any) {
-      const {data} = error.response;
-      Alert.alert('Erro', data.message);
-      dispatch({type: TYPES.SIGN_ERROR, data: error});
+    } catch (err:any) {      
       return false;
     }
   };

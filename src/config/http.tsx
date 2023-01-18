@@ -1,24 +1,23 @@
-import axios from 'axios';
-import {API_URL} from '@env';
-import store from '../store';
-import {logoutAction} from '../store/auth/auth.action';
+import axios from 'axios'
+import store from '../store'
+import { logoutAction } from '../store/auth/auth.action'
 
-const http = axios.create({baseURL: API_URL});
+const http = axios.create({ baseURL: process.env.REACT_APP_API })
 
-http.defaults.headers['content-type'] = 'application/json';
+axios.defaults.headers.common['Content-Type'] = 'application/json'
 
 http.interceptors.response.use(
-  response => response,
-  error => {
+  (response) => response,
+  (error) => {
     switch (error.response.status) {
       case 401:
         // store.dispatch(logoutAction());
-        return Promise.reject(error);
+        return Promise.reject(error)
 
       default:
-        return Promise.reject(error);
+        return Promise.reject(error)
     }
-  },
-);
+  }
+)
 
-export default http;
+export default http

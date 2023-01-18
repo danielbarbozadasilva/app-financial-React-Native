@@ -9,12 +9,12 @@ import {
   ContainerButton,
   styles
 } from './styled'
-import EmailIcon from '../../../assets/svg/email.svg'
 import LockIcon from '../../../assets/svg/lock.svg'
 import { useNavigation } from '@react-navigation/native'
 import imageLogo from '../../../assets/image/header-image.png'
 import { TextInput, Alert } from 'react-native'
 import CustomButtonComponent from '../../../components/Button/index'
+import { TextInputMask } from 'react-native-masked-text'
 
 export interface SignInProps {
   submit: any
@@ -22,12 +22,12 @@ export interface SignInProps {
 
 const SignIn: React.FC<SignInProps> = ({ submit }) => {
   const navigation = useNavigation()
-  const [email, setEmail] = useState('')
+  const [cpf, setCpf] = useState('')
   const [password, setPassword] = useState('')
 
   const handlerSignClick = async () => {
-    if (email !== '' && password !== '') {
-      submit({ email, password })
+    if (cpf !== '' && password !== '') {
+      submit({ cpf, password })
     } else {
       Alert.alert('Atenção', 'Campo(s) não preenchido(s)!')
     }
@@ -41,11 +41,10 @@ const SignIn: React.FC<SignInProps> = ({ submit }) => {
     <Container>
       <SImage source={imageLogo} />
       <InputArea>
-        <TextInput
-          IconSvg={EmailIcon}
-          placeholder="Digite o seu e-mail"
-          value={email}
-          onChangeText={(t) => setEmail(t)}
+        <TextInputMask
+          type={'cpf'}
+          placeholder="Digite o seu cpf"
+          onChangeText={(t) => setCpf(t)}
           style={styles.input}
         />
         <TextInput

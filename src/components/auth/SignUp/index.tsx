@@ -173,7 +173,6 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
           />
           <Controller
             control={control}
-            secureTextEntry
             name="password"
             render={({ field: { onChange } }) => (
               <>
@@ -257,7 +256,7 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
                 <Select
                   placeholder="Selecione a sua cidade"
                   style={styles.inputSelect}
-                  value={value}
+                  // value={value}
                   selectedValue={value}
                   onValueChange={onChange}
                 >
