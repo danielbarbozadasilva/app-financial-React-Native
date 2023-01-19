@@ -1,8 +1,9 @@
 import axios from 'axios'
 import store from '../store'
 import { logoutAction } from '../store/auth/auth.action'
+import { REACT_APP_API } from '@env';
 
-const http = axios.create({ baseURL: process.env.REACT_APP_API })
+const http = axios.create({ baseURL: REACT_APP_API })
 
 axios.defaults.headers.common['Content-Type'] = 'application/json'
 
@@ -11,7 +12,7 @@ http.interceptors.response.use(
   (error) => {
     switch (error.response.status) {
       case 401:
-        // store.dispatch(logoutAction());
+        //store.dispatch(logoutAction());
         return Promise.reject(error)
 
       default:

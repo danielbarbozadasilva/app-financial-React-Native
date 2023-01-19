@@ -13,8 +13,6 @@ const SignIn: React.FC = () => {
     dispatch(signInAction(form)).then((result: any) => {
       if (result) {
         navigation.navigate('MainTab')
-      } else {
-        Alert.alert('Erro', 'Usuário ou senha incorretos')
       }
     })
   }
