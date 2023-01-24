@@ -59,7 +59,9 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
     }
   }, [watch('uf')])
 
-  const handleSignUp: SubmitHandler<FormValues> = async (form) => {
+  const handleSignUp: SubmitHandler<FormValues> = async (form) => { 
+    console.log(form);
+       
     const nform = {
       name: form.name,
       email: form.email,
@@ -256,7 +258,7 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
                 <Select
                   placeholder="Selecione a sua cidade"
                   style={styles.inputSelect}
-                  // value={value}
+                  value={value}
                   selectedValue={value}
                   onValueChange={onChange}
                 >

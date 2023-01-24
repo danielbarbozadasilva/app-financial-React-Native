@@ -9,7 +9,6 @@ import {
   ContainerButton,
   styles
 } from './styled'
-import LockIcon from '../../../assets/svg/lock.svg'
 import { useNavigation } from '@react-navigation/native'
 import imageLogo from '../../../assets/image/header-image.png'
 import { TextInput, Alert } from 'react-native'
@@ -48,7 +47,6 @@ const SignIn: React.FC<SignInProps> = ({ submit }) => {
           style={styles.input}
         />
         <TextInput
-          IconSvg={LockIcon}
           placeholder="Digite a senha"
           value={password}
           onChangeText={(t) => setPassword(t)}
