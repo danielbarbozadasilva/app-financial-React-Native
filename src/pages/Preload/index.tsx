@@ -14,7 +14,7 @@ const Preload: React.FC = () => {
       if (token) {
         const result = await checkTokenAction({ token })
         if (result) {
-          navigation.navigate('MainTab')
+          navigation.navigate('Home')
         } else {
           navigation.navigate('SignIn')
         }
