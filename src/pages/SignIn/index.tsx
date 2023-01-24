@@ -12,7 +12,7 @@ const SignIn: React.FC = () => {
   const submitForm = async (form: object) => {
     dispatch(signInAction(form)).then((result: any) => {
       if (result) {
-        navigation.navigate('MainTab')
+        navigation.navigate('Home')
       }
     })
   }

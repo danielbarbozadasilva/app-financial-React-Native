@@ -5,7 +5,7 @@ export const schemaSignUp = yup
     name: yup.string().required('Informe o nome'),
     email: yup.string().required('Informe o e-mail').email('E-mail inválido'),
     cpf: yup.string().required('Informe o cpf'),
-    birthDate: yup.string().required('Informe a sua data de nascimento'),
+    birth_date: yup.string().required('Informe a sua data de nascimento'),
     password: yup
       .string()
       .required('Informe a senha')
@@ -17,7 +17,7 @@ export const schemaSignUp = yup
     address: yup.string().required('Informe o endereço'),
     uf: yup.string().required('Informe a uf'),
     city: yup.string().required('Informe a cidade'),
-    zipCode: yup.string().required('Informe o cep'),
+    zip_code: yup.string().required('Informe o cep'),
     complement: yup.string().optional(),
   })
   .required();
