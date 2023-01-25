@@ -10,7 +10,7 @@ type BalanceProps = {
   }
 }
 
-const Balance = ({ data }: BalanceProps) => {
+const Balance: React.FC<BalanceProps> = ({ data }) => {
   return (
     <>
       <View style={styles.container}>

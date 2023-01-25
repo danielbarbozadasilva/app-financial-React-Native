@@ -1,13 +1,11 @@
-import React from 'react';
-import {TitleHeader} from './styled';
+import React from 'react'
+import { TitleHeader } from './styled'
 
 type TitleProps = {
   text: string
 }
 
-const Title = ({ text }: TitleProps) => {
-  return (
-    <TitleHeader>{text}</TitleHeader>
-  )
-};
-export default Title;
+const Title: React.FC<TitleProps> = ({ text }) => {
+  return <TitleHeader>{text}</TitleHeader>
+}
+export default Title

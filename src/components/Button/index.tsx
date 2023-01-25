@@ -6,7 +6,7 @@ type ButtonProps = {
   onPress: any
 }
 
-const CustomButtonComponent = ({ text, onPress }: ButtonProps) => {
+const CustomButtonComponent: React.FC<ButtonProps> = ({ text, onPress }) => {
   return (
     <CustomButton onPress={onPress}>
       <CustomButtonText>{text}</CustomButtonText>

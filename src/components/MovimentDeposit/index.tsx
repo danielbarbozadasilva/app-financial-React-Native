@@ -11,7 +11,7 @@ type MovimentDepositProps = {
   }
 }
 
-export default function MovimentDeposit({ data }: MovimentDepositProps) {
+const MovimentDeposit: React.FC<MovimentDepositProps> = ({ data }) => {
   return (
     <TouchableOpacity style={styles.container}>
       <Text style={styles.date}>{data.current_date}</Text>
@@ -23,3 +23,5 @@ export default function MovimentDeposit({ data }: MovimentDepositProps) {
     </TouchableOpacity>
   )
 }
+
+export default MovimentDeposit

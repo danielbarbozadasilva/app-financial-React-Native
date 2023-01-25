@@ -8,7 +8,7 @@ import {
 } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
 
-const Actions = () => {
+const Actions: React.FC = () => {
   const navigation = useNavigation()
 
   return (
@@ -40,19 +40,12 @@ const Actions = () => {
 
         <TouchableOpacity
           style={styles.actionButton}
-          onPress={navigation.navigate('FinancialAssets')}
+          onPress={() => navigation.navigate('FinancialAssets')}
         >
           <View style={styles.areaButton}>
             <AntDesign name="barschart" size={24} color="black" />
           </View>
           <Text style={styles.labelButton}>Ativos</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.actionButton}>
-          <View style={styles.areaButton}>
-            <AntDesign name="tagso" size={26} color="#000" />
-          </View>
-          <Text style={styles.labelButton}>Carteira</Text>
         </TouchableOpacity>
 
         <TouchableOpacity style={styles.actionButton}>
