@@ -35,7 +35,7 @@ export const styles = StyleSheet.create({
     height: 50,
     marginTop: 10,
     backgroundColor: '#E4E3E8',
-    paddingLeft: 15,
+    paddingStart: 15,
     fontSize: 16,
   },
   inputSelect: {
