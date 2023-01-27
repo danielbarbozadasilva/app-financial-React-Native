@@ -2,7 +2,6 @@ import TYPES from '../types'
 
 const INITIAL_STATE = {
   loading: false,
-  error: [],
   deposit: [],
   selected: [],
   all: []

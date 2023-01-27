@@ -1,7 +1,7 @@
 import React from 'react'
 import { signUpAction } from '../../store/auth/auth.action'
 import { useDispatch } from 'react-redux'
-import FormSignUp from '../../components/auth/SignUp/index'
+import FormSignUp from '../../components/Auth/SignUp/index'
 import { useNavigation } from '@react-navigation/native'
 import { Alert } from 'react-native'
 
@@ -10,7 +10,6 @@ const SignUp: React.FC = () => {
   const navigation = useNavigation()
 
   const submitForm = async (form: object) => {
-    console.log(form)
     dispatch(signUpAction(form)).then((result) => {
       if (result?.data?.token) {
         navigation.navigate('Home')

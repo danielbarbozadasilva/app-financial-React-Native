@@ -1,9 +1,8 @@
 import React from 'react'
 import { signInAction } from '../../store/auth/auth.action'
 import { useDispatch } from 'react-redux'
-import FormSignIn from '../../components/auth/SignIn/index'
+import FormSignIn from '../../components/Auth/SignIn/index'
 import { useNavigation } from '@react-navigation/native'
-import { Alert } from 'react-native'
 
 const SignIn: React.FC = () => {
   const dispatch = useDispatch()
