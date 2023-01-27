@@ -29,9 +29,8 @@ const Home: React.FC = () => {
   return (
     <>
       <Header name={name} />
-      <View>
+      <View style={styles.container}>
         <Balance data={account} />
-
         <Actions />
         <Title text="Ultimas movimentações" />
         <FlatList

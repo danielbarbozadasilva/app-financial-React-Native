@@ -18,15 +18,11 @@ export const styles = StyleSheet.create({
  
   itemTitle:{
     fontSize: 18,
-    color: '#DADADA'
+    color: '#c9c7c7'
   },
   content:{
     flexDirection: 'row',
     alignItems: 'center'
-  },
-  currencySymbol:{
-    color: '#DADADA',
-    marginEnd: 6
   },
   balance:{
     fontSize: 20,

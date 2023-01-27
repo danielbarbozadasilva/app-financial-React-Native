@@ -48,7 +48,10 @@ const Actions: React.FC = () => {
           <Text style={styles.labelButton}>Ativos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('Profile')}
+        >
           <View style={styles.areaButton}>
             <MaterialCommunityIcons name="account" size={24} color="black" />
           </View>

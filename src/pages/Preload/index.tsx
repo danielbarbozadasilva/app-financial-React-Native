@@ -29,7 +29,7 @@ const Preload: React.FC = () => {
     <Container>
       <Image
         source={require('../../assets/image/header-image.png')}
-        style={{ width: 330, height: 380 }}
+        style={{ width: 350, height: 190 }}
       />
       <LoadingIcon size="large" color="#ccc" />
     </Container>

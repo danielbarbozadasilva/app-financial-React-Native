@@ -1,14 +1,5 @@
 import React, { useState } from 'react'
-import {
-  Container,
-  SImage,
-  InputArea,
-  SignMessageButton,
-  SignMessageButtonText,
-  SignMessageButtonTextBold,
-  ContainerButton,
-  styles
-} from './styled'
+import { Container, SImage, InputArea, ContainerButton, styles } from './styled'
 import { useNavigation } from '@react-navigation/native'
 import imageLogo from '../../../assets/image/header-image.png'
 import { TextInput, Alert } from 'react-native'
@@ -19,7 +10,7 @@ export interface SignInProps {
   submit: any
 }
 
-const SignIn: React.FC<SignInProps> = ({ submit }) => {
+const FormSignIn: React.FC<SignInProps> = ({ submit }) => {
   const navigation = useNavigation()
   const [cpf, setCpf] = useState('')
   const [password, setPassword] = useState('')
@@ -64,4 +55,4 @@ const SignIn: React.FC<SignInProps> = ({ submit }) => {
     </Container>
   )
 }
-export default SignIn
+export default FormSignIn
