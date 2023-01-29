@@ -21,6 +21,9 @@ const reducer = ({ ...state }: any = INITIAL_STATE, action: any) => {
       state.deposit = action.data
       state.loading = false
       return state
+    case TYPES.TRANSACTION_CREATE:
+      state.loading = false
+      return state
     default:
       return state
   }

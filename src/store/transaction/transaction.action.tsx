@@ -1,8 +1,11 @@
 import TYPES from '../types'
 import {
   listByIdUserTransactionService,
-  listByIdDepositTransactionService
+  listByIdDepositTransactionService,
+  createTransactionService
 } from '../../services/transaction.service'
+import { decodeToken } from '../../config/auth'
+import { Alert } from 'react-native'
 
 export const listByIdUserAssetAction = (clientid: string) => {
   return async (dispatch: any) => {
@@ -14,7 +17,7 @@ export const listByIdUserAssetAction = (clientid: string) => {
   }
 }
 
-export const listByIdUserDepositAction = (clientid: string) => {  
+export const listByIdUserDepositAction = (clientid: string) => {
   return async (dispatch: any) => {
     dispatch({ type: TYPES.TRANSACTION_LOADING, status: true })
     try {
@@ -25,5 +28,21 @@ export const listByIdUserDepositAction = (clientid: string) => {
         data: result.data.data
       })
     } catch (error) {}
+  }
+}
+
+export const createTransaction = (asset_id: string, data: object) => {
+  return async (dispatch: any) => {
+    dispatch({ type: TYPES.TRANSACTION_LOADING, status: true })
+    try {
+      const decode = await decodeToken()
+      await createTransactionService(decode.id, asset_id, data)
+      dispatch({ type: TYPES.TRANSACTION_CREATE })
+      Alert.alert('Sucesso', 'Ativo adquirido com sucesso!')
+    } catch (error: any) {
+      console.log(error)
+      const { data } = error.response
+      Alert.alert('Erro', data.message)
+    }
   }
 }
