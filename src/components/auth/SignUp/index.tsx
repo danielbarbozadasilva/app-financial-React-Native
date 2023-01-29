@@ -16,6 +16,7 @@ import {
   Container,
   styles
 } from './styled'
+import Header from '../../Header/Bar'
 
 export interface SignUpProps {
   submit: any
@@ -59,9 +60,9 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
     }
   }, [watch('uf')])
 
-  const handleSignUp: SubmitHandler<FormValues> = async (form) => { 
-    console.log(form);
-       
+  const handleSignUp: SubmitHandler<FormValues> = async (form) => {
+    console.log(form)
+
     const nform = {
       name: form.name,
       email: form.email,
@@ -82,9 +83,9 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
 
   return (
     <Container>
+      <Header name="Crie sua conta" />
       <ScrollView>
-        <VStack flex={1} px={10}>
-          <Title text="Crie sua conta" />
+        <VStack flex={1} p={10}>
           <Controller
             control={control}
             name="name"
