@@ -6,7 +6,7 @@ import { listByIdUserDepositAction } from '../../store/transaction/transaction.a
 import Title from '../../components/Title'
 import { styles } from './styled'
 import MovimentDeposit from '../../components/MovimentDeposit'
-import Header from '../../components/Header'
+import Header from '../../components/Header/Bar'
 
 const Deposit: React.FC = () => {
   const transactions = useSelector((state: any) => state.transaction.deposit)
