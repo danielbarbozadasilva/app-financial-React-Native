@@ -8,7 +8,7 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
       paddingTop: statusBarHeight - 10,
       flexDirection: 'row',
       paddingStart: 16,
-      paddingEnd: 26,
+      paddingEnd: 160,
       paddingBottom: 22
     },
     content: {
@@ -21,14 +21,5 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
       fontSize: 18,
       color: '#fff',
       fontWeight: 'bold'
-    },
-    buttonUser: {
-      width: 44,
-      height: 44,
-      backgroundColor: 'rgba(255,255,255,0.5)',
-      justifyContent: 'center',
-      alignItems: 'center',
-      borderRadius: 44 / 2,
-      marginStart: 30
     }
   })
