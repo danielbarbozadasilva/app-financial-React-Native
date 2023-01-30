@@ -23,7 +23,7 @@ const Profile: React.FC = () => {
 
   return (
     <>
-      <Header name={'Minha conta'} />
+      <Header name="Dados da conta" />
       <Container>
         <Area>
           <CategoryIcon>
