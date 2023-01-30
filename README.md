@@ -144,7 +144,7 @@ Caso o usuário ainda não esteja cadastrado no sistema. Este deve clicar no bot
 <br />
 <div style="display: flex;">
     <img src="./src/assets/image/prints/3.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
-    <img src="./src/assets/image/prints/3.1.png" width="350px" alt="" />
+    <img src="./src/assets/image/prints/4.png" width="350px" alt="" />
 </div>
 <br />
 <br />
@@ -156,7 +156,7 @@ Caso o usuário ainda não esteja cadastrado no sistema. Este deve clicar no bot
 Na tela principal, o cliente terá acesso as suas informações bancárias como saldo em conta corrente, o patrimônio total e o total investido. Este pode utilizar a barra de menu para navegar através de Entradas, Compras, Ativos e dados da conta.
 <br />
 <br />
-<img src="./src/assets/image/prints/4.png" width="350px" alt="" />
+<img src="./src/assets/image/prints/5.png" width="350px" alt="" />
 <br />
 <br />
 <br />
@@ -168,7 +168,7 @@ Nesta tela são listados os depósitos efetuados na conta do cliente.
 <br />
 <br />
 <div style="display: flex;">
-    <img src="./src/assets/image/prints/5.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
+    <img src="./src/assets/image/prints/6.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
 </div>
 <br />
 <br />
@@ -180,7 +180,7 @@ Nesta tela são listados os depósitos efetuados na conta do cliente.
 Para acessar a tela de compras basta clicar no botão "Compras" localizado no menu principal do aplicativo.
 <br />
 <br />
-<img src="./src/assets/image/prints/6.png" width="350px" alt="" />
+<img src="./src/assets/image/prints/7.png" width="350px" alt="" />
 <br />
 <br />
 <br />
@@ -192,7 +192,7 @@ Nesta tela será possivel selecionar o ativo no qual o cliente deseja adiquirir.
 <br />
 <br />
 <div style="display: flex;">
-<img src="./src/assets/image/prints/7.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
+<img src="./src/assets/image/prints/8.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
 </div>
 <br />
 <br />
@@ -203,7 +203,7 @@ Ao selecionar um ativo, o cliente poderá visualizar os dados do mesmo. Assim co
 <br />
 <br />
 <div style="display: flex;">
-<img src="./src/assets/image/prints/8.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
+<img src="./src/assets/image/prints/9.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
 </div>
 <br />
 <br />
@@ -214,8 +214,8 @@ Nesta tela de confirmação serão exibidos os dados do ativo, assim como a quan
 <br />
 <br />
 <div style="display: flex;">
-<img src="./src/assets/image/prints/9.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
 <img src="./src/assets/image/prints/10.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
+<img src="./src/assets/image/prints/11.png" width="350px" alt="" style="margin: 0px 20px 0px 0px" />
 </div>
 <br />
 <br />
@@ -225,7 +225,7 @@ Nesta tela de confirmação serão exibidos os dados do ativo, assim como a quan
 Para acessar a tela de perfil basta clicar no botão "Conta" localizado na tela inicial do aplicativo. Nesta tela o usuário poderá alterar os seus dados, visualizar regulamentos, avaliar o aplicativo, visualizar informações sobre o aplicativo e finalizar a sessão.
 <br />
 <br />
-<img src="./src/assets/image/prints/11.png" width="350px" alt="" />
+<img src="./src/assets/image/prints/12.png" width="350px" alt="" />
 <br />
 <br />
 <br />
