@@ -1,8 +1,8 @@
 import AsyncStorage from '@react-native-async-storage/async-storage'
-import { REACT_APP_TOKEN_KEY } from '@env';
-
+import { REACT_APP_TOKEN_KEY } from '@env'
 const baseKey = process.env.REACT_APP_TOKEN_KEY
 import jwt_decode from 'jwt-decode'
+import { decodeTokenType } from '../types/decode'
 
 export const setStorageItem = async (key: string, value: string) => {
   await AsyncStorage.setItem(`${baseKey}${key}`, value)
@@ -17,5 +17,8 @@ export const removeStorageItem = async (key: string) => {
 }
 
 export const decodeToken = async (key = 'token') => {
-  return jwt_decode(await AsyncStorage.getItem(`${baseKey}${key}`) || '')
+  const result: decodeTokenType = jwt_decode(
+    (await AsyncStorage.getItem(`${baseKey}${key}`)) || ''
+  )
+  return result
 }

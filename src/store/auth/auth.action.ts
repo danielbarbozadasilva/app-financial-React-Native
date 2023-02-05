@@ -1,24 +1,18 @@
 import TYPES from '../types';
 import {setStorageItem, removeStorageItem} from '../../config/auth';
 import {Alert} from 'react-native';
-import {
-  authService,
-  checkTokenService,
-  sendTokenService,
-  resetPasswordService,
-  signUpService,
-  searchZipCodeService,
-} from '../../services/auth.service';
+import { authService, checkTokenService, signUpService } from '../../services/auth.service';
 import http from '../../config/http';
+import { Dispatch } from 'redux';
 
 export const signInAction = (data:object) => {  
-  return async (dispatch:any) => {
+  return async (dispatch: Dispatch) => {
     dispatch({type: TYPES.AUTH_LOADING, status: true});
     try {      
       const result = await authService(data);
       const credentials = result.data?.data;
       if (credentials.token) {
-        http.defaults.headers.token = credentials.token;
+        http.defaults.headers.common['Token']  = credentials.token;
         await setStorageItem('token', credentials.token);
         dispatch({type: TYPES.SIGN_IN, data: credentials.token});
         return true;
@@ -39,28 +33,8 @@ export const checkTokenAction = async (data:object) => {
   } catch (error) {}
 };
 
-export const sendTokenAction = (data:object) => {
-  return async (dispatch:any) => {
-    dispatch({type: TYPES.AUTH_LOADING, status: true});
-    try {
-      const result = await sendTokenService(data);
-      return result.data;
-    } catch (error) {}
-  };
-};
-
-export const recoveryPasswordAction = (data:object) => {
-  return async (dispatch:any) => {
-    dispatch({type: TYPES.AUTH_LOADING, status: true});
-    try {
-      const result = await resetPasswordService(data);
-      return result.data;
-    } catch (error) {}
-  };
-};
-
 export const signUpAction = (data:object) => {
-  return async (dispatch:any) => {
+  return async (dispatch: Dispatch) => {
     dispatch({type: TYPES.AUTH_LOADING, status: true});
     try {
       const result = await signUpService(data);
@@ -74,15 +48,8 @@ export const signUpAction = (data:object) => {
   };
 };
 
-export const searchZipCode = async (data:string) => {
-  try {
-    const result = await searchZipCodeService(data);
-    return result.data;
-  } catch (error) {}
-};
-
 export const logoutAction = () => {
-  return async (dispatch:any) => {
+  return async (dispatch: Dispatch) => {
     await removeStorageItem('token');
     dispatch({type: TYPES.SIGN_OUT});
   };

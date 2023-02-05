@@ -4,9 +4,8 @@ import styled from 'styled-components/native';
 
 export const CustomButton = styled.TouchableOpacity`
   height: 45px;
-  background-color: #463f57;
+  background-color: #FF6341;
   color: #f6f7fc;
-  border-radius: 30px;
   justify-content: center;
   align-items: center;
   margin-top: 15px;

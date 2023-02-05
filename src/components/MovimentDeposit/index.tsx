@@ -1,17 +1,9 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styled'
+import { MovimentDepositProps } from './types'
 
-type MovimentDepositProps = {
-  data: {
-    current_date: string
-    bank_name: string
-    origin_cpf: string
-    deposit_value: string
-  }
-}
-
-export default function MovimentDeposit({ data }: MovimentDepositProps) {
+const MovimentDeposit: React.FC<MovimentDepositProps> = ({ data }) => {
   return (
     <TouchableOpacity style={styles.container}>
       <Text style={styles.date}>{data.current_date}</Text>
@@ -23,3 +15,5 @@ export default function MovimentDeposit({ data }: MovimentDepositProps) {
     </TouchableOpacity>
   )
 }
+
+export default MovimentDeposit

@@ -4,7 +4,7 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
 
   export const styles = StyleSheet.create({
     container: {
-      backgroundColor: '#8000ff',
+      backgroundColor: '#152039',
       paddingTop: statusBarHeight,
       flexDirection: 'row',
       paddingStart: 16,
@@ -20,7 +20,9 @@ const statusBarHeight = StatusBar.currentHeight ? StatusBar.currentHeight + 22 :
     userName: {
       fontSize: 18,
       color: '#fff',
-      fontWeight: 'bold'
+      fontWeight: 'bold',
+      marginStart: 7
+
     },
     buttonUser: {
       width: 44,

@@ -2,8 +2,7 @@ import TYPES from '../types';
 
 const INITIAL_STATE = {
   loading: false,
-  error: [],
-  registered: false,
+  registered: false
 };
 
 const reducer = ({...state}:any = INITIAL_STATE, action:any) => {

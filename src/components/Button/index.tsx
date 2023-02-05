@@ -1,12 +1,8 @@
 import React from 'react'
 import { CustomButton, CustomButtonText } from './styled'
+import { ButtonProps } from './types'
 
-type ButtonProps = {
-  text: string
-  onPress: any
-}
-
-const CustomButtonComponent = ({ text, onPress }: ButtonProps) => {
+const CustomButtonComponent: React.FC<ButtonProps> = ({ text, onPress }) => {
   return (
     <CustomButton onPress={onPress}>
       <CustomButtonText>{text}</CustomButtonText>

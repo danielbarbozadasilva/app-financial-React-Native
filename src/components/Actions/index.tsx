@@ -7,9 +7,10 @@ import {
   MaterialIcons
 } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
+import { Nav } from '../../types/navigate'
 
-const Actions = () => {
-  const navigation = useNavigation()
+const Actions: React.FC = () => {
+  const navigation = useNavigation<Nav>()
 
   return (
     <>
@@ -40,7 +41,7 @@ const Actions = () => {
 
         <TouchableOpacity
           style={styles.actionButton}
-          onPress={navigation.navigate('FinancialAssets')}
+          onPress={() => navigation.navigate('FinancialAssets')}
         >
           <View style={styles.areaButton}>
             <AntDesign name="barschart" size={24} color="black" />
@@ -48,14 +49,10 @@ const Actions = () => {
           <Text style={styles.labelButton}>Ativos</Text>
         </TouchableOpacity>
 
-        <TouchableOpacity style={styles.actionButton}>
-          <View style={styles.areaButton}>
-            <AntDesign name="tagso" size={26} color="#000" />
-          </View>
-          <Text style={styles.labelButton}>Carteira</Text>
-        </TouchableOpacity>
-
-        <TouchableOpacity style={styles.actionButton}>
+        <TouchableOpacity
+          style={styles.actionButton}
+          onPress={() => navigation.navigate('Profile')}
+        >
           <View style={styles.areaButton}>
             <MaterialCommunityIcons name="account" size={24} color="black" />
           </View>
