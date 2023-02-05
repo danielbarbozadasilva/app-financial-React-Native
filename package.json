@@ -47,6 +47,7 @@
     "@babel/runtime": "^7.4.5",
     "@types/react": "~18.0.14",
     "@types/react-native": "~0.70.6",
+    "@types/styled-components-react-native": "^5.2.1",
     "babel-plugin-transform-inline-environment-variables": "^0.4.4",
     "dotenv-webpack": "^8.0.1",
     "metro-react-native-babel-preset": "^0.54.1",
