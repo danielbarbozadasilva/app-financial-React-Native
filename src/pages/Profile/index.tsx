@@ -3,7 +3,7 @@ import { Container, Area, InfoArea, AreaName, CategoryIcon } from './styled'
 import { logoutAction } from '../../store/auth/auth.action'
 import { useNavigation } from '@react-navigation/native'
 import Header from '../../components/Header/Bar'
-import { useDispatch } from 'react-redux'
+import { useAppDispatch } from '../../hooks/index'
 import {
   FontAwesome,
   MaterialIcons,
@@ -11,10 +11,11 @@ import {
   AntDesign,
   Ionicons
 } from '@expo/vector-icons'
+import { Nav } from '../../types/navigate'
 
 const Profile: React.FC = () => {
-  const navigation = useNavigation()
-  const dispatch = useDispatch()
+  const navigation = useNavigation<Nav>()
+  const dispatch = useAppDispatch()
 
   const handleLogoutClick = () => {
     dispatch(logoutAction())

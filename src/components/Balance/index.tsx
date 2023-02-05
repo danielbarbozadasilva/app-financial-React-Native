@@ -1,14 +1,7 @@
 import React from 'react'
 import { View, Text } from 'react-native'
 import { styles } from './styled'
-
-type BalanceProps = {
-  data: {
-    balance: string
-    total_assets: string
-    consolidated: string
-  }
-}
+import { BalanceProps } from './types'
 
 const Balance: React.FC<BalanceProps> = ({ data }) => {
   return (

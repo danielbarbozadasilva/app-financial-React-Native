@@ -1,8 +1,9 @@
 import TYPES from '../types'
 import {listAllAssetService} from '../../services/financial.service'
+import { Dispatch } from 'redux';
 
 export const listAllAssetAction = () => {
-  return async (dispatch:any) => {
+  return async (dispatch: Dispatch) => {
     dispatch({ type: TYPES.FINANCIAL_LOADING, status: true })
     try {
       const result = await listAllAssetService()

@@ -1,15 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styled'
-
-type MovimentDepositProps = {
-  data: {
-    current_date: string
-    bank_name: string
-    origin_cpf: string
-    deposit_value: string
-  }
-}
+import { MovimentDepositProps } from './types'
 
 const MovimentDeposit: React.FC<MovimentDepositProps> = ({ data }) => {
   return (

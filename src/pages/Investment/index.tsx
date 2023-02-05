@@ -1,16 +1,16 @@
 import React from 'react'
 import { View, FlatList } from 'react-native'
 import { decodeToken } from '../../config/auth'
-import { useDispatch, useSelector } from 'react-redux'
 import { listByIdUserAssetAction } from '../../store/transaction/transaction.action'
 import Title from '../../components/Title'
 import { styles } from './styled'
 import InvestmentAsset from '../../components/Investment'
 import Header from '../../components/Header/Bar'
+import { useAppSelector, useAppDispatch } from '../../hooks/index'
 
 const Investment: React.FC = () => {
-  const transactions = useSelector((state: any) => state.transaction.selected)
-  const dispatch = useDispatch()
+  const transactions = useAppSelector((state) => state.transaction.selected)
+  const dispatch = useAppDispatch()
 
   React.useEffect(() => {
     decodeToken().then((result) => {

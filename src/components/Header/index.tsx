@@ -2,14 +2,12 @@ import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { Feather } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
-import { styles } from './styled.ts'
-
-type UserProps = {
-  name: string
-}
+import { styles } from './styled'
+import { Nav } from '../../types/navigate'
+import { UserProps } from './types'
 
 const Header: React.FC<UserProps> = ({ name }) => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<Nav>()
 
   return (
     <View style={styles.container}>

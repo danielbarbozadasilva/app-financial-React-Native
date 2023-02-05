@@ -1,10 +1,10 @@
 import TYPES from '../types'
 import { listByIdClientService, updateClientService } from '../../services/client.service'
-import { decodeToken, setStorageItem } from '../../config/auth'
-import { Alert } from 'react-native'
+import { decodeToken } from '../../config/auth'
+import { Dispatch } from 'redux';
 
-export const listByIdClientAction = (id: string) => {
-    return async (dispatch:any) => {
+export const listByIdClientAction = () => {
+  return async (dispatch: Dispatch) => {
     dispatch({ type: TYPES.CLIENT_LOADING, status: true })
     try {
       const decode = await decodeToken();
@@ -15,8 +15,7 @@ export const listByIdClientAction = (id: string) => {
 }
 
 export const updateClientAction = (data:object) => {
-  return async (dispatch:any) => {
-    
+  return async (dispatch: Dispatch) => {
     try {
       const decode = await decodeToken();      
       await updateClientService(decode.id, data);

@@ -1,14 +1,7 @@
 import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { styles } from './styled'
-
-type MovimentsProps = {
-  data: {
-    current_date: string
-    bvmf: string
-    current_price: string
-  }
-}
+import { MovimentsProps } from './types'
 
 const Moviments: React.FC<MovimentsProps> = ({ data }) => {
   return (

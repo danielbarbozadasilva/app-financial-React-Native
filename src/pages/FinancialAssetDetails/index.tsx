@@ -26,11 +26,14 @@ import {
 import { useNavigation } from '@react-navigation/native'
 import Swiper from 'react-native-swiper'
 import { renderImg } from '../../utils/helpers/helpers.image'
+import { NavProps } from '../../types/navigate'
+import { FinancialInterface } from './types'
 
-const FinancialAssetDetails: React.FC = (props) => {
-  const { asset } = props.route.params
+const FinancialAssetDetails: React.FC<FinancialInterface> = ({ route }) => {
+  const { asset } = route.params
   const [count, setCount] = React.useState(1)
-  const navigation = useNavigation()
+
+  const navigation = useNavigation<NavProps>()
 
   function increment() {
     setCount(function (prevCount) {
@@ -60,7 +63,6 @@ const FinancialAssetDetails: React.FC = (props) => {
               style={{ height: 160 }}
               dot={<SwiperDot />}
               activeDot={<SwiperDotActive />}
-              paginationStyle={{ top: 15, right: 15, bottom: null, left: null }}
               autoplay={true}
             >
               <SwiperImage
@@ -83,8 +85,9 @@ const FinancialAssetDetails: React.FC = (props) => {
               )}
               <FinancialInfo>
                 <FinancialInfoName>{'Ativo: ' + asset.name}</FinancialInfoName>
-                <FinancialInfoPrice>{'Preço: ' + asset.current_price}</FinancialInfoPrice>
-                {console.log(asset)}
+                <FinancialInfoPrice>
+                  {'Preço: ' + asset.current_price}
+                </FinancialInfoPrice>
               </FinancialInfo>
             </FinancialInfoArea>
             <FinancialQuantityArea>

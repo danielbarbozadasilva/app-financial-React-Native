@@ -2,18 +2,11 @@ import { styles } from './styled'
 import { renderImg } from '../../utils/helpers/helpers.image'
 import { TouchableOpacity, View, Text, Image } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
+import { NavProps } from '../../types/navigate'
+import { FinancialAssetsProps } from './types'
 
-type FinancialAssetsProps = {
-  data: {
-    name: string
-    description: string
-    bvmf: string
-    current_price: string
-    image: string
-  }
-}
 const ItemAsset: React.FC<FinancialAssetsProps> = ({ data }) => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<NavProps>()
 
   const handleClick = () => {
     navigation.navigate('FinancialAssetDetails', { asset: data })

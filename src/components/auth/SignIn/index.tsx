@@ -5,13 +5,11 @@ import imageLogo from '../../../assets/image/header-image.png'
 import { TextInput, Alert } from 'react-native'
 import CustomButtonComponent from '../../../components/Button/index'
 import { TextInputMask } from 'react-native-masked-text'
-
-export interface SignInProps {
-  submit: any
-}
+import { Nav } from '../../../types/navigate'
+import { SignInProps } from './types'
 
 const FormSignIn: React.FC<SignInProps> = ({ submit }) => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<Nav>()
   const [cpf, setCpf] = useState('')
   const [password, setPassword] = useState('')
 

@@ -6,45 +6,18 @@ import { useForm, Controller, SubmitHandler } from 'react-hook-form'
 import ufCityFile from '../../../utils/state-city.json'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { schemaSignUp } from '../../../utils/validations/form-signup'
-import Title from '../../Title/index'
 import CustomButtonComponent from '../../Button/index'
-import {
-  CustomButton,
-  CustomButtonText,
-  ErrorMessage,
-  SelectArea,
-  Container,
-  styles
-} from './styled'
+import { ErrorMessage, SelectArea, Container, styles } from './styled'
 import Header from '../../Header/Bar'
-
-export interface SignUpProps {
-  submit: any
-}
+import { SignUpProps, FormValues } from './types'
 
 const SignUp: React.FC<SignUpProps> = ({ submit }) => {
-  type FormValues = {
-    name: string
-    email: string
-    cpf: string
-    gender: string
-    birth_date: string
-    password: string
-    phone: string
-    address: string
-    uf: string
-    city: string
-    zip_code: string
-    complement: string
-  }
-
   const [uf, setUf] = React.useState([])
   const [city, setCity] = React.useState([])
   const {
     control,
     handleSubmit,
     watch,
-    setValue,
     formState: { errors }
   } = useForm<FormValues>({ resolver: yupResolver(schemaSignUp) })
 
@@ -61,8 +34,6 @@ const SignUp: React.FC<SignUpProps> = ({ submit }) => {
   }, [watch('uf')])
 
   const handleSignUp: SubmitHandler<FormValues> = async (form) => {
-    console.log(form)
-
     const nform = {
       name: form.name,
       email: form.email,

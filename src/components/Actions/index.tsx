@@ -7,9 +7,10 @@ import {
   MaterialIcons
 } from '@expo/vector-icons'
 import { useNavigation } from '@react-navigation/native'
+import { Nav } from '../../types/navigate'
 
 const Actions: React.FC = () => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<Nav>()
 
   return (
     <>

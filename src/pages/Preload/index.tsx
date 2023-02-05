@@ -4,24 +4,26 @@ import { Image } from 'react-native'
 import { getStorageItem } from '../../config/auth'
 import { useNavigation } from '@react-navigation/native'
 import { checkTokenAction } from '../../store/auth/auth.action'
+import { Nav } from '../../types/navigate'
 
 const Preload: React.FC = () => {
-  const navigation = useNavigation()
-
-  useEffect(() => {
-    const checkToken = async () => {
-      const token = await getStorageItem('token')      
-      if (token) {
-        const result = await checkTokenAction({ token })
-        if (result) {
-          navigation.navigate('Home')
-        } else {
-          navigation.navigate('SignIn')
-        }
+  const navigation = useNavigation<Nav>()
+  
+  const checkToken = async () => {
+    const token = await getStorageItem('token')      
+    if (token) {
+      const result = await checkTokenAction({ token })
+      if (result) {
+        navigation.navigate('Home')
       } else {
         navigation.navigate('SignIn')
       }
+    } else {
+      navigation.navigate('SignIn')
     }
+  }
+
+  useEffect(() => {
     checkToken()
   }, [])
 

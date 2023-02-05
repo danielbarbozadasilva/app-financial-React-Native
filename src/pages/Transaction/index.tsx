@@ -1,9 +1,6 @@
 import React from 'react'
-import { signUpAction } from '../../store/auth/auth.action'
-import { useDispatch } from 'react-redux'
-import FormTransaction from '../../components/Transaction/index'
+import { useAppDispatch } from '../../hooks/index'
 import { useNavigation } from '@react-navigation/native'
-import { Alert, Text } from 'react-native'
 import {
   Container,
   Scroller,
@@ -21,21 +18,15 @@ import {
   formatPrice
 } from '../../utils/helpers/helpers.price'
 import { createTransaction } from '../../store/transaction/transaction.action'
+import { Nav } from '../../types/navigate'
+import { TransactionInterface, TransactionType } from './types'
 
-type TransactionProps = {
-  current_date: string
-  name: string
-  bvmf: string
-  current_price: string
-  quantity: number
-}
+const Transaction: React.FC<TransactionInterface> = ({ route }) => {
+  const { data } = route.params
+  const navigation = useNavigation<Nav>()
+  const dispatch = useAppDispatch()
 
-const Transaction: React.FC<TransactionProps> = (props) => {
-  const { data } = props.route.params
-  const navigation = useNavigation()
-  const dispatch = useDispatch()
-
-  const handlerCreateTransaction = (form: string) => {
+  const handlerCreateTransaction = (form: TransactionType) => {
     const subTotal = calcSubTotal(data.count, data.asset.current_price)
     const total = calcTotalTransfer(subTotal)
 
@@ -87,7 +78,9 @@ const Transaction: React.FC<TransactionProps> = (props) => {
               </FinancialText>
             </FinancialInfo>
 
-            <CustomButton onPress={() => handlerCreateTransaction(data)}>
+            <CustomButton
+              onPress={() => handlerCreateTransaction(data as TransactionType)}
+            >
               <CustomButtonText>Finalizar</CustomButtonText>
             </CustomButton>
           </PageBody>

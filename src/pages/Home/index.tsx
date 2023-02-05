@@ -3,20 +3,20 @@ import { View, FlatList } from 'react-native'
 import Balance from '../../components/Balance'
 import Header from '../../components/Header'
 import { decodeToken } from '../../config/auth'
-import { useDispatch, useSelector } from 'react-redux'
 import { checkBalanceAction } from '../../store/account/account.action'
 import { listByIdUserAssetAction } from '../../store/transaction/transaction.action'
 import Title from '../../components/Title'
 import { styles } from './styled'
+import { useAppSelector, useAppDispatch } from '../../hooks/index'
 import Moviments from '../../components/Moviments'
 import Actions from '../../components/Actions'
 
 const Home: React.FC = () => {
-  const account = useSelector((state: any) => state.account.balance)
-  const transactions = useSelector((state: any) => state.transaction.selected)
+  const account = useAppSelector((state) => state.account.balance)
+  const transactions = useAppSelector((state) => state.transaction.selected)
 
   const [name, setName] = React.useState('')
-  const dispatch = useDispatch()
+  const dispatch = useAppDispatch()
 
   React.useEffect(() => {
     decodeToken().then((result) => {

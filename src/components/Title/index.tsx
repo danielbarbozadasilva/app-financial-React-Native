@@ -1,9 +1,6 @@
 import React from 'react'
 import { TitleHeader } from './styled'
-
-type TitleProps = {
-  text: string
-}
+import { TitleProps } from './types'
 
 const Title: React.FC<TitleProps> = ({ text }) => {
   return <TitleHeader>{text}</TitleHeader>

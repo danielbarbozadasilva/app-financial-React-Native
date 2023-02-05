@@ -1,4 +1,4 @@
-import {applyMiddleware, combineReducers, createStore} from 'redux';
+import {applyMiddleware, combineReducers, createStore, Dispatch} from 'redux';
 import thunk from 'redux-thunk';
 import multi from 'redux-multi';
 
@@ -21,5 +21,9 @@ const middlewares = [thunk, multi];
 const compose = applyMiddleware(...middlewares);
 
 const store = createStore(reducers, compose);
+
+export type RootState = ReturnType<typeof store.getState>
+
+export type AppDispatch = typeof store.dispatch
 
 export default store;

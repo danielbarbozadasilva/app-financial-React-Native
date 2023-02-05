@@ -2,17 +2,11 @@ import React from 'react'
 import { View, Text, TouchableOpacity } from 'react-native'
 import { useNavigation } from '@react-navigation/native'
 import { styles } from './styled'
-
-type InvestmentAssetProps = {
-  data: {
-    current_date: string
-    bvmf: string
-    current_price: string
-  }
-}
+import { NavProps } from '../../types/navigate'
+import { InvestmentAssetProps } from './types'
 
 const InvestmentAsset: React.FC<InvestmentAssetProps> = ({ data }) => {
-  const navigation = useNavigation()
+  const navigation = useNavigation<NavProps>()
 
   const handleClick = () => {
     navigation.navigate('FinancialAssetDetails', { asset: data })
